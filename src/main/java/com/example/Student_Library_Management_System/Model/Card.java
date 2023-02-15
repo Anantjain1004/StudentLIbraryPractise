@@ -37,6 +37,12 @@ public class Card {
     private List<Book> booksIssued = new ArrayList<>();//because list of books will be connected to a card
 
 
+    //Connecting of the Card class to the transaction
+    //bidirectional mapping
+    @OneToMany(mappedBy = "card",cascade = CascadeType.ALL)
+    private List<Transactions> transactionsList = new ArrayList<>();
+
+
    //constructor
     public Card() {
 
@@ -44,6 +50,15 @@ public class Card {
 
 
     //getters and setters
+
+    public List<Transactions> getTransactionsList() {
+        return transactionsList;
+    }
+
+    public void setTransactionsList(List<Transactions> transactionsList) {
+        this.transactionsList = transactionsList;
+    }
+
     public List<Book> getBooksIssued() {
         return booksIssued;
     }
