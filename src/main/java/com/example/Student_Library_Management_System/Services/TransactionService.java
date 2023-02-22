@@ -87,7 +87,7 @@ public class TransactionService {
         //saving the parent
 
 
-        return "Book issued successfully";
+        return "Book issued successfully.";
     }
 
     public String getTransactions(int bookId,int cardId){
